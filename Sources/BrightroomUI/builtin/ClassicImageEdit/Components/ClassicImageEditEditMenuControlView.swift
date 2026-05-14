@@ -64,7 +64,7 @@ public enum ClassicImageEditEditMenu: CaseIterable {
       return button
     }()
     
-      // 调整画笔的按钮
+    // 调整画笔的按钮
     public lazy var maskButton: ButtonView = {
       let button = ButtonView(
         name: viewModel.localizedStrings.editMask,
@@ -74,7 +74,7 @@ public enum ClassicImageEditEditMenu: CaseIterable {
       return button
     }()
     
-      // 调整光亮的按钮
+    // 调整光亮的按钮
     public lazy var exposureButton: ButtonView = {
       let button = ButtonView(
         name: viewModel.localizedStrings.editBrightness,
@@ -294,7 +294,11 @@ public enum ClassicImageEditEditMenu: CaseIterable {
         maskButton.hasChanges = !edit.drawings.blurredMaskPaths.isEmpty
         
         contrastButton.hasChanges = edit.filters.contrast != nil
-        exposureButton.hasChanges = edit.filters.exposure != nil
+        let exposureChanged = edit.filters.exposure != nil
+        if exposureButton.hasChanges != exposureChanged {
+          print("📸 [Exposure] 🔵 exposureButton.hasChanges → \(exposureChanged)（小圆点标记\(exposureChanged ? "显示" : "隐藏")）")
+        }
+        exposureButton.hasChanges = exposureChanged
         temperatureButton.hasChanges = edit.filters.temperature != nil
         saturationButton.hasChanges = edit.filters.saturation != nil
         highlightsButton.hasChanges = edit.filters.highlights != nil
@@ -324,6 +328,7 @@ public enum ClassicImageEditEditMenu: CaseIterable {
     
     @objc
     private func brightness() {
+      print("📸 [Exposure] 👆 exposureButton 点击 — push ExposureControl")
       push(
         viewModel.options.classes.control.exposureControl.init(viewModel: viewModel),
         animated: true

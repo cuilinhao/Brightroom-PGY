@@ -26,6 +26,9 @@ import BrightroomEngine
 #endif
 import Verge
 
+
+ //MARK: - 曝光 | 光亮 控制器
+
 open class ClassicImageEditExposureControlBase : ClassicImageEditFilterControlBase {
 
   public required init(viewModel: ClassicImageEditViewModel) {
@@ -43,8 +46,12 @@ open class ClassicImageEditExposureControl : ClassicImageEditExposureControlBase
 
   public let slider = ClassicImageEditStepSlider(frame: .zero)
 
+    
+  //MARK: -  init stepup  注册滑块事件和导航按钮回调：
+    
   open override func setup() {
     super.setup()
+    print("📸 [Exposure] ▶ setup() — 控制器初始化，注册滑块事件")
 
     backgroundColor = ClassicImageEditStyle.default.control.backgroundColor
 
@@ -55,7 +62,7 @@ open class ClassicImageEditExposureControl : ClassicImageEditExposureControlBase
     navigationView.didTapCancelButton = { [weak self] in
       
       guard let self = self else { return }
-      
+      print("📸 [Exposure] ✕ 点击 Cancel — revertEdit() 撤销到快照")
       self.viewModel.editingStack.revertEdit()
       self.pop(animated: true)
     }
@@ -63,7 +70,7 @@ open class ClassicImageEditExposureControl : ClassicImageEditExposureControlBase
     navigationView.didTapDoneButton = { [weak self] in
       
       guard let self = self else { return }
-      
+      print("📸 [Exposure] ✓ 点击 Done — takeSnapshot() 提交快照")
       self.viewModel.editingStack.takeSnapshot()
       self.pop(animated: true)
     }
@@ -72,7 +79,9 @@ open class ClassicImageEditExposureControl : ClassicImageEditExposureControlBase
   open override func didReceiveCurrentEdit(state: Changes<ClassicImageEditViewModel.State>) {
     
     state.ifChanged(\.editingState.loadedState?.currentEdit.filters.exposure).do { value in
-      slider.set(value: value?.value ?? 0, in: FilterExposure.range)
+      let displayValue = value?.value ?? 0
+      print("📸 [Exposure] 🔄 didReceiveCurrentEdit — 外部状态变化，同步滑块 → exposure.value = \(displayValue)")
+      slider.set(value: displayValue, in: FilterExposure.range)
     }
     
   }
@@ -81,13 +90,17 @@ open class ClassicImageEditExposureControl : ClassicImageEditExposureControlBase
   private func valueChanged() {
 
     let value = slider.transition(in: FilterExposure.range)
+    print("📸 [Exposure] 🎚 slider valueChanged — 原始滑块值映射到 EV = \(value)（范围：\(FilterExposure.range.min) ~ \(FilterExposure.range.max)）")
+      
     guard value != 0 else {
+      print("📸 [Exposure] 🗑 value == 0，清空 filters.exposure = nil（移除滤镜节点）")
       viewModel.editingStack.set(filters: {
         $0.exposure = nil
       })
       return
     }    
-        
+    
+    print("📸 [Exposure] ✏️ 写入 EditingStack → filters.exposure.value = \(value)")
     viewModel.editingStack.set(filters: {
       var f = FilterExposure()
       f.value = value

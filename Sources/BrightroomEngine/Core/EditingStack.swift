@@ -84,6 +84,8 @@ open class EditingStack: Hashable, StoreDriverType {
 
        - TODO: Should be marked as `fileprivate(set)`, but compile fails in CocoaPods installed.
        */
+        
+      // 预览渲染（拖动时实时看到效果）：
       public var currentEdit: Edit {
         didSet {
           editingPreviewImage = currentEdit.filters.apply(to: editingSourceImage)

@@ -46,6 +46,9 @@ extension EditingStack {
       public var blurredMaskPaths: [DrawnPath] = []
     }
 
+    //MARK: - 统一管理所有滤镜
+    // 统一管理所有滤镜，exposure 是可选属性，nil 代表未调整：
+      
     public struct Filters: Equatable {
 
       public var preset: FilterPreset?
@@ -80,6 +83,7 @@ extension EditingStack {
 
             // Before
             exposure?.asAny(),
+            // exposure 在滤镜链中排第二，preset 之后
             brightness?.asAny(),
             temperature?.asAny(),
             highlights?.asAny(),

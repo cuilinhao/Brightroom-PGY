@@ -22,6 +22,8 @@
 import UIKit
 import CoreImage
 
+// FilterExposure — 滤镜参数结构体：
+
 public struct FilterExposure : Filtering, Equatable, Codable, Sendable {
   
   public static let range: ParameterRange<Double, FilterExposure> = .init(min: -1.8, max: 1.8)
@@ -33,6 +35,7 @@ public struct FilterExposure : Filtering, Equatable, Codable, Sendable {
   }
   
   public func apply(to image: CIImage, sourceImage: CIImage) -> CIImage {
+    print("📸 [Exposure] ⚙️ FilterExposure.apply — CIExposureAdjust kCIInputEVKey = \(value)，图片尺寸 = \(image.extent.size)")
     return
       image
         .applyingFilter(

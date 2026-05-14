@@ -26,6 +26,8 @@ import BrightroomEngine
 #endif
 import Verge
 
+ //MARK: - 蒙层
+
 public final class BlurryMaskingView: PixelEditorCodeBasedView, UIScrollViewDelegate {
 
   private struct State: Equatable {
@@ -106,7 +108,7 @@ public final class BlurryMaskingView: PixelEditorCodeBasedView, UIScrollViewDele
   
   private var isBinding = false
   
-  // MARK: - Initializers
+  // MARK: - Initializers init
   
   public init(editingStack: EditingStack) {
     
