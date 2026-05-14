@@ -1,0 +1,8 @@
+platform :ios, '16.6'
+project 'Brightroom.xcodeproj'
+
+target 'SwiftUIDemo' do
+  use_frameworks!
+
+  pod 'LookinServer', :configurations => ['Debug']
+end

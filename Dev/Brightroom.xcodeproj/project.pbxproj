@@ -90,6 +90,7 @@
 		4BF934202614CAD600E0637A /* CGContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9341F2614CAD600E0637A /* CGContextTests.swift */; };
 		4BF934282614CB6000E0637A /* screenshot-8bit-lcd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF934272614CB6000E0637A /* screenshot-8bit-lcd.png */; };
 		4BF934412614D08300E0637A /* screenshot-8bit-p3-alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF934402614D08300E0637A /* screenshot-8bit-p3-alpha.png */; };
+		F528516B51B2B52A5343521E /* Pods_SwiftUIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7A13D45DAF9183E2B2288 /* Pods_SwiftUIDemo.framework */; };
 		FC06C87F2A53AF4500215B89 /* BrightroomEngine in Frameworks */ = {isa = PBXBuildFile; productRef = FC06C87E2A53AF4500215B89 /* BrightroomEngine */; };
 		FC06C8812A53AF4500215B89 /* BrightroomUI in Frameworks */ = {isa = PBXBuildFile; productRef = FC06C8802A53AF4500215B89 /* BrightroomUI */; };
 		FC110D2B2660F90200CC45EA /* ImageSourceInitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC110D2A2660F90200CC45EA /* ImageSourceInitTest.swift */; };
@@ -481,6 +482,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0320E78FB9EC6A784D4A7F00 /* Pods-SwiftUIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftUIDemo/Pods-SwiftUIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		0451857E2B8F4A9E00A74713 /* DemoCropView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCropView2.swift; sourceTree = "<group>"; };
 		4B135F6D26136B5D003B5152 /* RendererOrientationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendererOrientationTests.swift; sourceTree = "<group>"; };
 		4B2324E32B763D4A00662EB8 /* GeometryPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryPlayground.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 		4B98CCC225EFF31400E4F61F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B98CCC425EFF31400E4F61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B98CCE625EFF4EF00E4F61F /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		4B9FD67E973F10B60349749A /* Pods-SwiftUIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUIDemo/Pods-SwiftUIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4BA9896E2B70BF2000EB7983 /* RenderedResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderedResultView.swift; sourceTree = "<group>"; };
 		4BA989702B70F10300EB7983 /* ObjectEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectEdge.swift; sourceTree = "<group>"; };
 		4BA989722B7122C800EB7983 /* DemoMaskingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMaskingView.swift; sourceTree = "<group>"; };
@@ -559,6 +562,7 @@
 		4BF9341F2614CAD600E0637A /* CGContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGContextTests.swift; sourceTree = "<group>"; };
 		4BF934272614CB6000E0637A /* screenshot-8bit-lcd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-8bit-lcd.png"; sourceTree = "<group>"; };
 		4BF934402614D08300E0637A /* screenshot-8bit-p3-alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-8bit-p3-alpha.png"; sourceTree = "<group>"; };
+		57D7A13D45DAF9183E2B2288 /* Pods_SwiftUIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC110D2A2660F90200CC45EA /* ImageSourceInitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSourceInitTest.swift; sourceTree = "<group>"; };
 		FC110D2D2660FD2200CC45EA /* 5633ed9d0eb700d0093bf85d86a95ebf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5633ed9d0eb700d0093bf85d86a95ebf.jpg; sourceTree = "<group>"; };
 		FC110D2E2660FD2200CC45EA /* acce3629083f0e348e94fb58f952d3de.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = acce3629083f0e348e94fb58f952d3de.jpg; sourceTree = "<group>"; };
@@ -945,6 +949,7 @@
 				4B7513C82B6BEDFD00A4743E /* SwiftUIHosting in Frameworks */,
 				4BA2B1B42B86282D00E6DE64 /* BrightroomUIPhotosCrop in Frameworks */,
 				FC06C8812A53AF4500215B89 /* BrightroomUI in Frameworks */,
+				F528516B51B2B52A5343521E /* Pods_SwiftUIDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1024,6 +1029,7 @@
 				4BDEE0A625F8CF6800FA22CB /* Tests */,
 				4B600AFE216B7A94001E1456 /* Products */,
 				4B600B37216B7CD6001E1456 /* Frameworks */,
+				6AFC53B6B66E11361AAFBFF7 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -1047,6 +1053,7 @@
 				4B600B3C216B7CE3001E1456 /* Foundation.framework */,
 				4B600B3A216B7CDD001E1456 /* AVFoundation.framework */,
 				4B600B38216B7CD6001E1456 /* CoreImage.framework */,
+				57D7A13D45DAF9183E2B2288 /* Pods_SwiftUIDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1179,6 +1186,16 @@
 				4BED49E7261C9CE20011A98F /* Info.plist */,
 			);
 			path = ShareLUT;
+			sourceTree = "<group>";
+		};
+		6AFC53B6B66E11361AAFBFF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B9FD67E973F10B60349749A /* Pods-SwiftUIDemo.debug.xcconfig */,
+				0320E78FB9EC6A784D4A7F00 /* Pods-SwiftUIDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		FC110D2C2660FD0A00CC45EA /* ImageSamples */ = {
@@ -1567,10 +1584,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B98CCC525EFF31400E4F61F /* Build configuration list for PBXNativeTarget "SwiftUIDemo" */;
 			buildPhases = (
+				7F51FD6C79E275BB4FD7E02D /* [CP] Check Pods Manifest.lock */,
 				4B98CCB525EFF31300E4F61F /* Sources */,
 				4B98CCB625EFF31300E4F61F /* Frameworks */,
 				4B98CCB725EFF31300E4F61F /* Resources */,
 				4B98CCE125EFF4A400E4F61F /* Embed Frameworks */,
+				2658006A8756F2F451275133 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2148,6 +2167,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2658006A8756F2F451275133 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIDemo/Pods-SwiftUIDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIDemo/Pods-SwiftUIDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftUIDemo/Pods-SwiftUIDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F51FD6C79E275BB4FD7E02D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftUIDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B98CCB525EFF31300E4F61F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -2346,9 +2407,9 @@
 		};
 		4B98CCC625EFF31400E4F61F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B9FD67E973F10B60349749A /* Pods-SwiftUIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/SwiftUIDemo/Preview Content\"";
@@ -2367,9 +2428,9 @@
 		};
 		4B98CCC725EFF31400E4F61F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0320E78FB9EC6A784D4A7F00 /* Pods-SwiftUIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/SwiftUIDemo/Preview Content\"";

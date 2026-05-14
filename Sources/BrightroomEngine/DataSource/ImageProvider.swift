@@ -179,6 +179,7 @@ public final class ImageProvider: Equatable, StoreDriverType {
 
   }
 
+ //MARK: - init
   public init(rawDataURL: URL) {
 
     store = .init(
