@@ -37,6 +37,7 @@ public enum ClassicImageEditEditMenu: CaseIterable {
   case adjustment
   case mask
   case exposure
+    case hsl
   case contrast
   case clarity
   case temperature
@@ -83,6 +84,17 @@ public enum ClassicImageEditEditMenu: CaseIterable {
       button.addTarget(self, action: #selector(brightness), for: .touchUpInside)
       return button
     }()
+      
+      
+    //调整HSL的按钮
+      
+    public lazy var hslBtn: ButtonView = {
+          let btn = ButtonView(name: viewModel.localizedStrings.editBrightness, image: UIImage(named: "brightness", in: bundle, with: nil)!)
+          
+          btn.addTarget(self, action: #selector(hslBtn111), for: .touchUpInside)
+          
+          return btn
+      }()
     
     public lazy var gaussianBlurButton: ButtonView = {
       let button = ButtonView(
@@ -247,6 +259,9 @@ public enum ClassicImageEditEditMenu: CaseIterable {
             buttons.append(maskButton)
           case .exposure:
             buttons.append(exposureButton)
+              
+          case .hsl:
+              buttons.append(hslBtn)
           case .gaussianBlur:
             buttons.append(gaussianBlurButton)
           case .contrast:
@@ -321,6 +336,15 @@ public enum ClassicImageEditEditMenu: CaseIterable {
       push(ClassicImageEditMaskControl(viewModel: viewModel), animated: true)
     }
     
+      
+      @objc
+      private func hslBtn111() {
+       // 调节图片的HSL
+          
+      }
+      
+      
+      
     @objc
     private func doodle() {
       push(ClassicImageEditDoodleControl(viewModel: viewModel), animated: true)
