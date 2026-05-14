@@ -57,18 +57,45 @@ public final class ClassicImageEditViewController: UIViewController {
     public var filter = "Filter"
     public var edit = "Edit"
 
+      /*
+       - Mask —— 蒙版
+       - Brightness —— 亮度
+       - Contrast —— 对比度
+       - Clarity —— 清晰度
+
+       - Temperature —— 色温
+       - Saturation —— 饱和度
+       - Fade —— 褪色/淡化
+       - Highlights —— 高光
+       - Shadows —— 阴影
+
+       - Vignette —— 暗角（渐晕）
+       - Sharpen —— 锐化
+       - Blur —— 模糊
+       */
     public var editAdjustment = "Adjust"
+      //蒙版
     public var editMask = "Mask"
+      //Highlights —— 高光
     public var editHighlights = "Highlights"
+      //Shadows —— 阴影
     public var editShadows = "Shadows"
     public var editSaturation = "Saturation"
+      //- Contrast —— 对比度
     public var editContrast = "Contrast"
+      //Blur —— 模糊
     public var editBlur = "Blur"
+      //Temperature —— 色温
     public var editTemperature = "Temperature"
+    ///Brightness —— 亮度
     public var editBrightness = "Brightness"
+      //Vignette —— 暗角（渐晕）
     public var editVignette = "Vignette"
+      //- Fade —— 褪色/淡化
     public var editFade = "Fade"
+      //- Clarity —— 清晰度
     public var editClarity = "Clarity"
+      //- Sharpen —— 锐化
     public var editSharpen = "Sharpen"
     public var brushSizeSmall = "◦"
     public var brushSizeLarge = "◯"
