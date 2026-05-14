@@ -55,7 +55,7 @@ open class ClassicImageEditRootControl: ClassicImageEditRootControlBase {
 
   public let editMenuControl: ClassicImageEditEditMenuControlBase
 
-  // MARK: - Initializers
+  // MARK: - Initializers - init
 
   public required init(
     viewModel: ClassicImageEditViewModel,
@@ -99,6 +99,11 @@ open class ClassicImageEditRootControl: ClassicImageEditRootControlBase {
         stackView.heightAnchor.constraint(equalToConstant: 50),
       ])
 
+        
+        // TODO: - TODO
+        
+        stackView.backgroundColor = .systemGreen
+        
     }
 
     body: do {

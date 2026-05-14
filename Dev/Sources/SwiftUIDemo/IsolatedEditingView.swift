@@ -7,6 +7,15 @@ struct IsolatedEditinView: View {
   @ReadingObject<EditingStack> var editingStackState: EditingStack.State
   @State private var fullScreenView: FullscreenIdentifiableView?
 
+  
+  /*
+   zhushi
+   
+   BrightroomUI.ClassicImageEditRootControl
+   
+   */
+  
+  
   init() {
     self._editingStackState = .init { Mocks.makeEditingStack(image: Mocks.imageHorizontal()) }
   }

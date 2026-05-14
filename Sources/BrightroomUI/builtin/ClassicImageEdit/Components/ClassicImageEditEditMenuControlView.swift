@@ -27,6 +27,7 @@ import BrightroomEngine
 import Verge
 
 open class ClassicImageEditEditMenuControlBase: ClassicImageEditControlBase {
+    
   override public required init(viewModel: ClassicImageEditViewModel) {
     super.init(viewModel: viewModel)
   }
@@ -48,10 +49,12 @@ public enum ClassicImageEditEditMenu: CaseIterable {
   case gaussianBlur
   
   open class EditMenuControl: ClassicImageEditEditMenuControlBase {
+      
     public let contentView = UIView()
     public let itemsView = UIStackView()
     public let scrollView = UIScrollView()
     
+    // 调整尺寸的按钮
     public lazy var adjustmentButton: ButtonView = {
       let button = ButtonView(
         name: viewModel.localizedStrings.editAdjustment,
@@ -61,6 +64,7 @@ public enum ClassicImageEditEditMenu: CaseIterable {
       return button
     }()
     
+      // 调整画笔的按钮
     public lazy var maskButton: ButtonView = {
       let button = ButtonView(
         name: viewModel.localizedStrings.editMask,
@@ -70,6 +74,7 @@ public enum ClassicImageEditEditMenu: CaseIterable {
       return button
     }()
     
+      // 调整光亮的按钮
     public lazy var exposureButton: ButtonView = {
       let button = ButtonView(
         name: viewModel.localizedStrings.editBrightness,

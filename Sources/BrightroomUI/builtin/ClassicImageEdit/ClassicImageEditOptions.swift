@@ -50,6 +50,7 @@ public struct ClassicImageEditOptions: Sendable {
 extension ClassicImageEditOptions {
   public struct Classes: Sendable {
     
+    //MARK: - Sendable 传递该类型的值时，不会出现多线程同时读写导致的数据竞争。
     public struct Control: Sendable {
 
       /**
