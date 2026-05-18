@@ -88,6 +88,7 @@ open class EditingStack: Hashable, StoreDriverType {
       // 预览渲染（拖动时实时看到效果）：
       public var currentEdit: Edit {
         didSet {
+          // currentEdit 一旦变化，立刻用 Filters.apply() 把滤镜链作用到原始 CIImage 上，生成 editingPreviewImage 用于实时预览。原图永远不动。
           editingPreviewImage = currentEdit.filters.apply(to: editingSourceImage)
         }
       }
@@ -100,6 +101,8 @@ open class EditingStack: Hashable, StoreDriverType {
       /**
        A stack of editing history
        */
+        
+       //MARK: -  A stack of editing history
       public fileprivate(set) var history: [Edit] = []
 
       public fileprivate(set) var thumbnailImage: CIImage
@@ -173,20 +176,24 @@ open class EditingStack: Hashable, StoreDriverType {
       }
 
       // MARK: - Functions
-
+        
+      // 把 currentEdit 压入 history，相当于"存档"
       mutating func makeVersion() {
         history.append(currentEdit)
       }
-
+        
+      //只回退 currentEdit 到最近一次存档，不弹出历史
       mutating func revertCurrentEditing() {
         currentEdit = history.last ?? initialEditing
       }
-
+    
+      // 截断到指定版本，跳跃式回退
       mutating func revert(to revision: Revision) {
         history.removeSubrange(revision..<history.count)
         currentEdit = history.last ?? initialEditing
       }
 
+      ///弹出最新历史，赋给 currentEdit，无历史则回 initialEditing
       mutating func undoEditing() {
         currentEdit = history.popLast() ?? initialEditing
       }
@@ -527,10 +534,13 @@ open class EditingStack: Hashable, StoreDriverType {
 
   /**
    Undo editing, pulling the latest history back into the current edit.
+   撤销编辑，将最新历史记录恢复到当前编辑状态。
    */
+  //撤销编辑，将最新历史记录恢复到当前编辑状态。
   public func undoEdit() {
     _pixelengine_ensureMainThread()
-
+      
+     print("++++ 调用撤销操作undoEdit")
     commit {
       $0.loadedState?.undoEditing()
     }
@@ -539,14 +549,16 @@ open class EditingStack: Hashable, StoreDriverType {
   /**
    Purges the all of the history
    */
+  // 清除所有历史记录
   public func removeAllEditsHistory() {
     _pixelengine_ensureMainThread()
-
+      print("++++ 清除所有历史记录 removeAllEditsHistory")
     commit {
       $0.loadedState?.history = []
     }
   }
 
+  // 修改滤镜的入口
   public func set(filters: (inout Edit.Filters) -> Void) {
     _pixelengine_ensureMainThread()
 

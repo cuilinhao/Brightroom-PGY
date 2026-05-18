@@ -33,9 +33,11 @@ public struct FilterExposure : Filtering, Equatable, Codable, Sendable {
   public init() {
     
   }
-  
+    
+  //④ FilterExposure — 实际执行像素运算
   public func apply(to image: CIImage, sourceImage: CIImage) -> CIImage {
     print("📸 [Exposure] ⚙️ 最后调整图片 FilterExposure.apply — CIExposureAdjust kCIInputEVKey = \(value)，图片尺寸 = \(image.extent.size)")
+      
     return
       image
         .applyingFilter(

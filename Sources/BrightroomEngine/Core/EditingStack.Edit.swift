@@ -23,6 +23,7 @@ import CoreImage
 
 extension EditingStack {
   // TODO: Consider more effective shape
+    
   public struct Edit: Equatable {
     func makeFilters() -> [AnyFilter] {
       return filters.makeFilters()
@@ -33,8 +34,11 @@ extension EditingStack {
     }
     
     /// In orientation.up
+    /// 裁剪信息
     public var crop: EditingCrop
+    ///  所有滤镜参数
     public var filters: Filters = .init()
+    /// 涂鸦/遮罩路径
     public var drawings: Drawings = .init()
     
     init(crop: EditingCrop) {
